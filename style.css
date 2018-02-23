@@ -10,3 +10,9 @@
 .try-button {
     max-width: 300px;
 }
+
+.btn-custom{
+    background-color: #4FB5AF;
+    color: white;
+    margin-bottom: 56px;
+}

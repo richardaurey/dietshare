@@ -52,7 +52,7 @@
 
     <main class="p-3 mb-2 bg-primary text-white banner">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
 
 
                 <div class="col-12 col-md-6 order-md-2">
@@ -62,14 +62,13 @@
                 <div class="col-12 col-md-6">
                     <div>
 
-                        <h1>The connected diet journal</h1>
-                        <p> Give a simple tool to your patient to track their meals & Optimize your appointments</p>
+                        <h1 class="text-center">The connected diet journal</h1>
+                        <p class="text-center"> Give a simple tool to your patient to track their meals & Optimize your appointments</p>
 
                     </div>
                     <div>
                         <button type="button" class="try-button btn btn-light btn-block mx-auto">TRY NOW !</button>
                     </div>
-
                 </div>
 
 
@@ -77,13 +76,53 @@
 
             </div>
         </div>
+
+        <!-- <form action="https://hooks.zapier.com/hooks/catch/2687057/z0u1v9/">
+            Name:
+            <input type="text" class="form-control" name="name" id="">
+            <br> Email:
+            <input type="text" class="form-control" name="email" id="">
+            <br>
+            <button type="submit" class="btn btn-primary">Subscribe to our newsletter</button>
+        </form> -->
+
+
+
+
+
     </main>
 
+    <!-- <div class="container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-sm-4">
+<img src="images/dietician.png" class="img-fluid" alt="" style="height:100px">
 
+        </div>
+        <div class="col-12 col-sm-4">
+            <img src="images/progress-light.png" class="img-fluid" alt="" style="height:100px">
+        </div>
+        <div class="col-12 col-sm-4">
+            <img src="images/test-passed.png" class="img-fluid" alt="" style="height:100px; margin:auto;">
+        </div>
+    </div>
+</div> -->
 
-
-
-
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 col-md-6">
+                <form action="https://hooks.zapier.com/hooks/catch/2687057/z0u1v9/">
+                    Name:
+                    <input type="text" class="form-control" name="name" id="">
+                    <br> Email:
+                    <input type="text" class="form-control" name="email" id="">
+                    <br> Phone:
+                    <input type="text" class="form-control" name="phone" id="">
+                    <br>
+                    <button type="submit" class="btn btn-custom">Call me back</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -107,6 +146,26 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        $('form').submit(function (e) {
+            var that = this;
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr("action"),
+                type: $(this).attr("method") || "get",
+                data: $(this).serialize(),
+                success: function () {
+                    $(that).children("input").val("") // Clear all inputs
+                    $(that).children("button").text("Sent!") // Change the button the text the button
+                    $(that).children("button").attr("disabled", "") // Make the button disabled
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
